@@ -1,0 +1,73 @@
+chats/conversations
+- ID
+- user1_id (int)
+- user2_id (int)
+
+messages
+-ID
+-chat_id (int)
+-user_id (int) // sender 
+-read_at (timestamp, nullable)
+
+
+users
+- id - bigint
+- name (string)
+- address (string)
+- gender (string)
+- email (string)
+- password (string)
+- email_verified_at (timestamp, nullable)
+- birthday (date)
+- registered_at (timestamp, datetime)
+- blocked_at (timestamp, datetime)
+- type (string: admin, staff, customer)
+
+
+
+settings
+- ID
+- name (string)
+- value (text)
+
+
+addresses 
+- ID
+- name (string)
+
+
+services/packages
+- ID
+- name (string, unique, index)
+- descriptions (long text)
+- image (nullable)
+- price 
+- staff_id
+- created_at (timestamp)
+
+appointments
+- ID
+- service_id/package_id
+- remarks/notes (string)
+- client_id (user: client)
+- staff_id (user: staff)
+- date (date)
+- status (string: pending, approved, done, disapproved)
+- status_remarks (nullable, string)
+
+transactions 
+- ID
+- staff_id (int user:staff) // id who inputted
+- amount (string)
+- service_id (int)
+- created_at (timestamp)
+- remarks/notes (long text) 
+- client_id (customer)
+
+
+notifications
+- ID
+- title
+- messanges
+- read_at (timestamp, nullable)
+- user_id
